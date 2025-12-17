@@ -6,20 +6,29 @@ export const metadata: Metadata = {
 };
 
 export default function OnlinePage() {
-  const features = [
-    { title: "无限对话", description: "不限次数的AI对话，随时随地解答您的问题" },
-    { title: "云端存储", description: "对话记录云端保存，多设备同步访问" },
-    { title: "按需使用", description: "灵活的使用方式，按需选择不同的AI模型" },
-    { title: "平衡成本与效果", description: "合理的定价策略，最优的性价比" }
+  const advantages = [
+    { title: "开箱即用", description: "无需复杂配置，注册即可开始使用" },
+    { title: "数据安全", description: "企业级数据加密，保障您的隐私安全" },
+    { title: "个性化定制", description: "支持私有化部署，满足个性化需求" },
+    { title: "费用透明", description: "明确的计费规则，无隐藏消费" }
   ];
 
   const aiModels = [
-    { name: "GPT-4", desc: "OpenAI 最强大的语言模型" },
-    { name: "Claude", desc: "Anthropic 的对话式AI助手" },
-    { name: "文心一言", desc: "百度出品的中文大语言模型" },
-    { name: "通义千问", desc: "阿里云推出的AI助手" },
-    { name: "智谱清言", desc: "清华技术支持的AI模型" },
-    { name: "Gemini", desc: "Google 的多模态AI" },
+    {
+      name: "通义千问",
+      desc: "阿里云推出的AI助手",
+      icon: "https://img.alicdn.com/imgextra/i4/O1CN01Ue4htA1hduZMvHQlx_!!6000000004301-2-tps-270-90.png"
+    },
+    {
+      name: "豆包",
+      desc: "字节跳动AI对话助手",
+      icon: "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/logo-icon.png"
+    },
+    {
+      name: "腾讯混元",
+      desc: "腾讯自研大语言模型",
+      icon: "https://cloud.tencent.com/favicon.ico"
+    },
   ];
 
   return (
@@ -29,7 +38,7 @@ export default function OnlinePage() {
       <div className="fixed inset-0 bg-gradient-to-tl from-blue-100 via-transparent to-indigo-50 opacity-60 -z-10" />
 
       {/* Hero Text */}
-      <div className="mx-auto max-w-7xl px-4 pt-32 pb-12 sm:pt-40 sm:pb-16">
+      <div className="mx-auto max-w-7xl px-4 pt-28 pb-12">
         <div className="text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
             梯度助手
@@ -43,39 +52,20 @@ export default function OnlinePage() {
         </div>
       </div>
 
-      {/* Introduction Section */}
-      <section className="py-8 sm:py-12">
+      {/* Advantages Section */}
+      <section className="py-8">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl p-8 sm:p-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-              一站式智能学习体验
-            </h2>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>
-                梯度助手深度聚合国内外主流AI模型优势，提供<strong className="text-blue-600">一站式</strong>智能体验。无需切换平台，即可按需调用最佳模型，获取更精准、全面的答案。
-              </p>
-              <p>
-                产品具备<strong className="text-blue-600">开箱即用</strong>的便捷性，并支持<strong className="text-blue-600">私有化部署</strong>，确保企业数据绝对安全。内置强大的<strong className="text-blue-600">知识库管理</strong>功能，可对接企业内部文档，打造专属知识大脑，提升研究与办公效率。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            核心功能
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+            服务优势
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
+            {advantages.map((advantage, index) => (
               <div
                 key={index}
                 className="bg-white/80 backdrop-blur-sm rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300 text-center"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{advantage.title}</h3>
+                <p className="text-gray-600">{advantage.description}</p>
               </div>
             ))}
           </div>
@@ -83,17 +73,24 @@ export default function OnlinePage() {
       </section>
 
       {/* AI Models Section */}
-      <section className="py-16 sm:py-24">
+      <section className="pt-16 pb-12">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
             支持的AI模型
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {aiModels.map((model, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+                className="bg-white/80 backdrop-blur-sm rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300 text-center"
               >
+                <div className="flex justify-center mb-4">
+                  <img
+                    src={model.icon}
+                    alt={model.name}
+                    className={`object-contain ${model.name === '通义千问' ? 'w-32 h-16' : 'w-16 h-16'}`}
+                  />
+                </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{model.name}</h3>
                 <p className="text-gray-600">{model.desc}</p>
               </div>
@@ -106,43 +103,58 @@ export default function OnlinePage() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-16 sm:py-24">
+      <section className="py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
             应用场景
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl mb-4">📚</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">个人学习</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li>• 知识点解答</li>
-                <li>• 论文写作辅助</li>
-                <li>• 语言学习练习</li>
-                <li>• 编程代码帮助</li>
-              </ul>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white hover:shadow-lg transition-all duration-300">
+              <div className="relative h-48">
+                <img src="/images/personal-learning-bg.png" alt="个人学习" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-8">
+                <div className="text-4xl mb-4">📚</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">个人学习</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li>• 知识点解答</li>
+                  <li>• 论文写作辅助</li>
+                  <li>• 语言学习练习</li>
+                  <li>• 编程代码帮助</li>
+                </ul>
+              </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl mb-4">🔬</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">科研工作</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li>• 文献调研</li>
-                <li>• 数据分析</li>
-                <li>• 实验设计</li>
-                <li>• 报告撰写</li>
-              </ul>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white hover:shadow-lg transition-all duration-300">
+              <div className="relative h-48">
+                <img src="/images/research-work-bg.png" alt="科研工作" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-8">
+                <div className="text-4xl mb-4">🔬</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">科研工作</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li>• 文献调研</li>
+                  <li>• 数据分析</li>
+                  <li>• 实验设计</li>
+                  <li>• 报告撰写</li>
+                </ul>
+              </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl mb-4">🏢</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">企业应用</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li>• 知识库管理</li>
-                <li>• 客户服务</li>
-                <li>• 内容创作</li>
-                <li>• 业务分析</li>
-              </ul>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white hover:shadow-lg transition-all duration-300">
+              <div className="relative h-48">
+                <img src="/images/enterprise-bg.png" alt="企业应用" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-8">
+                <div className="text-4xl mb-4">🏢</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">企业应用</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li>• 知识库管理</li>
+                  <li>• 客户服务</li>
+                  <li>• 内容创作</li>
+                  <li>• 业务分析</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

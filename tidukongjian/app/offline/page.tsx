@@ -37,7 +37,7 @@ export default function OfflinePage() {
       <div className="fixed inset-0 bg-gradient-to-tl from-red-100 via-transparent to-orange-50 opacity-60 -z-10" />
 
       {/* Hero Text */}
-      <div className="mx-auto max-w-7xl px-4 pt-32 pb-12 sm:pt-40 sm:pb-16">
+      <div className="mx-auto max-w-7xl px-4 pt-28 pb-12">
         <div className="text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
             线下产品
@@ -52,7 +52,7 @@ export default function OfflinePage() {
       </div>
 
       {/* Features Section */}
-      <section className="py-8 sm:py-12">
+      <section className="py-8">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center space-y-4">
@@ -80,19 +80,24 @@ export default function OfflinePage() {
       </section>
 
       {/* Photo Gallery Carousel Section */}
-      <section className="pt-28 pb-16 sm:pt-36 sm:pb-24">
+      <section className="pt-16 pb-12">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
             自习室实拍
           </h2>
           <div className="relative max-w-5xl mx-auto">
             {/* Carousel Container */}
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={images[currentImageIndex].src}
-                alt={images[currentImageIndex].alt}
-                className="w-full h-full object-cover"
-              />
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Previous Button */}
@@ -137,19 +142,19 @@ export default function OfflinePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 sm:py-24">
+      <section className="py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
             配套服务
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "24小时开放", desc: "全天候为您提供学习空间" },
+              { title: "图书角", desc: "丰富的学习资料" },
               { title: "高速Wi-Fi", desc: "千兆网络，流畅在线学习" },
               { title: "打印复印", desc: "便捷的文印服务" },
               { title: "茶水供应", desc: "免费茶水咖啡供应" },
               { title: "储物柜", desc: "安全的个人物品存储" },
-              { title: "休息区", desc: "舒适的休息放松空间" },
+              { title: "生活区", desc: "提供完备的就餐设施与休闲空间" },
             ].map((service, index) => (
               <div
                 key={index}
