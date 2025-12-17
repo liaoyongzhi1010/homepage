@@ -45,7 +45,7 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">地图</h3>
                   <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
                     <iframe
-                      src="https://uri.amap.com/marker?position=120.346234,30.312045&name=梯度空间自习室&src=tidukongjian&coordinate=gaode&callnative=1"
+                      src="https://uri.amap.com/marker?position=120.37,30.31&name=梯度空间自习室&src=tidukongjian&coordinate=gaode&callnative=1"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -54,7 +54,7 @@ export default function ContactPage() {
                   </div>
                   <div className="mt-3 text-center">
                     <a
-                      href="https://uri.amap.com/marker?position=120.346234,30.312045&name=梯度空间自习室（杭州下沙店）钱塘区海聚中心2幢404&src=tidukongjian&coordinate=gaode&callnative=1"
+                      href="https://uri.amap.com/marker?position=120.37,30.31&name=梯度空间自习室（杭州下沙店）钱塘区海聚中心2幢404&src=tidukongjian&coordinate=gaode&callnative=1"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-purple-600 hover:text-purple-700 font-medium"
